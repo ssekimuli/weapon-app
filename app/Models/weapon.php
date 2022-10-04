@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class weapon extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'weapon_type',
+        'serial_number',
+        'number_of_rounds',
+        'quantity',
+    ];
 }

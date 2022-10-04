@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class onduty extends Model
 {
     use HasFactory;
+    protected $fillable =[
+        'weapon_id',
+        'supervisor_id',
+        'requested_by',
+        'approved_by',
+        'duty_location',
+    ];
 }
