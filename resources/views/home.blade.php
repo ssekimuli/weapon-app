@@ -16,6 +16,13 @@
 
                     <div class="row">
                           <div class="col-md-8">
+                            @if (\Session::has('warning'))
+                            <div class="alert alert-dnager">
+                                <ul>
+                                    <li class="text-danger">{!! \Session::get('warning') !!}</li>
+                                </ul>
+                            </div>
+                        @endif
                             <div class="table-responsive">
                                 <table class="table">
                                 <caption>List of weapon</caption>

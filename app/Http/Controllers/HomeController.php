@@ -23,22 +23,22 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+   
     public function index()
     {
         $list_weapon = weapon::all();
         $my_order = supervisorOrder::where('supervisor_id', Auth::user()->id)->get();
-        // dd($my_order);
-        // dd($list_weapon);
         return view('home', compact(['list_weapon', 'my_order']));
     }
 
     public function cart_Weapon()
     {
+        $check = $this->service->check_stock(request()->weapon_id, request()->quantity);
+        if($check){
+        return redirect()->back()
+         ->with('warning','Quantity shuld be Less  '. request()->quantity);
+        }
+
         $supervisor_order = new supervisorOrder();
         $supervisor_order->weapon_id = request()->weapon_id;
         $supervisor_order->weapon_type = request()->weapon_type;
