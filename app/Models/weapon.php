@@ -14,4 +14,9 @@ class weapon extends Model
         'number_of_rounds',
         'quantity',
     ];
+
+    public function supervisor_order()
+    {
+        return $this->belongsTo(supervisorOrder::class);
+    }
 }

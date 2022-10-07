@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('supervisor_orders', function (Blueprint $table) {
             $table->id();
             $table->integer('weapon_id');
+            $table->string('weapon_type');
             $table->integer('supervisor_id');
-            $table->integer('duty_location');
+            $table->string('duty_location');
+            $table->integer('quantity');
             $table->string('status');
             $table->timestamps();
         });

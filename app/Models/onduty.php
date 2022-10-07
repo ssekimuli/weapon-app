@@ -13,6 +13,7 @@ class onduty extends Model
         'supervisor_id',
         'requested_by',
         'approved_by',
+        'quantity',
         'duty_location',
     ];
 }

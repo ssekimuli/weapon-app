@@ -10,8 +10,15 @@ class supervisorOrder extends Model
     use HasFactory;
     protected $fillable =[
         'weapon_id',
+        'weapon_type',
         'supervisor_id',
         'duty_location',
+        'quantity',
         'status',
     ];
+
+    public function weapon()
+    {
+        return $this->hasMany(weapon::class);
+    }
 }

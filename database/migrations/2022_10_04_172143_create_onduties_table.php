@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->integer('weapon_id');
             $table->integer('supervisor_id');
-            $table->integer('requested_by');
-            $table->integer('approved_by');
+            $table->string('requested_by');
+            $table->string('approved_by');
+            $table->string('quantity');
             $table->string('duty_location');
             $table->timestamps();
         });
